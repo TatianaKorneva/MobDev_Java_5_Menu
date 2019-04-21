@@ -29,7 +29,8 @@
         <item
             android:id="@+id/menu_exit"
             android:orderInCategory="4"
-            android:title="exit">
+            android:title="exit"
+            >
         </item>
         <!--если элементу присводить категорию такую, которая уже была, то он встанет за тем элементом-->
         <item

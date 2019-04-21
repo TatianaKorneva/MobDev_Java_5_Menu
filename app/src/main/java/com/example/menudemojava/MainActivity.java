@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -13,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     // Элементы экрана
     TextView tv;
     CheckBox chb;
+    MenuItem mi;
 
 
     @Override
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         // находим элементы
         tv = (TextView) findViewById(R.id.textView);
         chb = (CheckBox) findViewById(R.id.chbExtMenu);
+        mi = (MenuItem) findViewById(R.id.menu_exit);
 
     }
 
@@ -46,16 +49,21 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // TODO Auto-generated method stub
         StringBuilder sb = new StringBuilder();
-
-        // Выведем в TextView информацию о нажатом пункте меню
-        sb.append("Item Menu");
-        sb.append("\r\n groupId: " + String.valueOf(item.getGroupId()));
-        sb.append("\r\n itemId: " + String.valueOf(item.getItemId()));
-        sb.append("\r\n order: " + String.valueOf(item.getOrder()));
-        sb.append("\r\n title: " + item.getTitle());
-        tv.setText(sb.toString());
-
+        if (mi.getTitle().toString()=="exit"){
+            finish();
+        }
+        else {
+            // Выведем в TextView информацию о нажатом пункте меню
+            sb.append("Item Menu");
+            sb.append("\r\n groupId: " + String.valueOf(item.getGroupId()));
+            sb.append("\r\n itemId: " + String.valueOf(item.getItemId()));
+            sb.append("\r\n order: " + String.valueOf(item.getOrder()));
+            sb.append("\r\n title: " + item.getTitle());
+            tv.setText(sb.toString());
+        }
         return super.onOptionsItemSelected(item);
     }
+
+
 
 }

@@ -31,5 +31,23 @@
             android:orderInCategory="4"
             android:title="exit">
         </item>
-    </group>
+        <!--если элементу присводить категорию такую, которая уже была, то он встанет за тем элементом-->
+        <item
+            android:id="@+id/menu_2"
+            android:orderInCategory="1"
+            android:title="menu2">
+        </item>
+        <!--если элемент добавлять в группу с ктегорией 5, то он встанет последним-->
+        <item
+            android:id="@+id/menu_3"
+            android:orderInCategory="5"
+            android:title="menu3">
+        </item>
+</group>
+
+<!--если элемент добавлять не в группу, то он будет на 3 месте после edit-->
+  <item
+      android:id="@+id/menu_1"
+      android:title="menu1">
+  </item>
 </menu>
